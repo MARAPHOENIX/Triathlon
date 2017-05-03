@@ -39,7 +39,7 @@ class FinishView extends Ui.View {
 		var elapsedTime = TriData.disciplines[0].endTime - TriData.disciplines[0].startTime; //
 		
 		dc.setColor(Gfx.COLOR_WHITE, Gfx.COLOR_TRANSPARENT);
-		dc.drawText(40, dc.getFontHeight( Gfx.FONT_LARGE )-dc.getFontHeight( Gfx.FONT_MEDIUM )+12, Gfx.FONT_MEDIUM, "Total:", Gfx.TEXT_JUSTIFY_LEFT);
+		dc.drawText(40, dc.getFontHeight( Gfx.FONT_LARGE )-dc.getFontHeight( Gfx.FONT_MEDIUM )+12, Gfx.FONT_MEDIUM, "Tot :", Gfx.TEXT_JUSTIFY_LEFT);
 		dc.drawText(dc.getWidth() - 40, 12, Gfx.FONT_LARGE, Functions.msToTime(elapsedTime), Gfx.TEXT_JUSTIFY_RIGHT);
 		
 		dc.drawLine( 0, dc.getFontHeight( Gfx.FONT_LARGE )+12, dc.getWidth(), dc.getFontHeight( Gfx.FONT_LARGE )+12 );

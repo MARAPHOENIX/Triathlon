@@ -105,7 +105,7 @@ class RecordingView extends Ui.View {
 		Sensor.enableSensorEvents(method(:onSnsr));
 		drawTitleBar(dc);
 		drawGPS(dc);
-		drawSegments(dc);
+		//drawSegments(dc);
 		drawDataFields(dc);
 		
 		
@@ -142,7 +142,7 @@ class RecordingView extends Ui.View {
 		var gpsIsOkay = ( gpsinfo.accuracy == Pos.QUALITY_GOOD || gpsinfo.accuracy == Pos.QUALITY_USABLE );
 		
 		dc.setColor( Functions.getGPSQualityColour(gpsinfo), Gfx.COLOR_BLACK);
-		dc.fillRectangle(0, 30, dc.getWidth(), 2);
+		dc.fillRectangle(0, 40, dc.getWidth(), 2);
     }
 
 	function drawSegments(dc) {
@@ -184,11 +184,11 @@ class RecordingView extends Ui.View {
 	function drawTitleBar(dc) {
 		var elapsedTime = Sys.getTimer() - TriData.disciplines[0].startTime;
 		
-		dc.drawBitmap( 35, 0, TriData.disciplines[TriData.currentDiscipline].currentIcon );
+		dc.drawBitmap( 55, 5, TriData.disciplines[TriData.currentDiscipline].currentIcon );
 		
 		dc.setColor(Gfx.COLOR_WHITE, Gfx.COLOR_TRANSPARENT);
-		dc.drawText(69, 0, Gfx.FONT_MEDIUM, "Total:", Gfx.TEXT_JUSTIFY_LEFT);
-		dc.drawText(dc.getWidth() - 40, 0, Gfx.FONT_MEDIUM, Functions.msToTime(elapsedTime), Gfx.TEXT_JUSTIFY_RIGHT);
+		//dc.drawText(69, 0, Gfx.FONT_MEDIUM, "Total:", Gfx.TEXT_JUSTIFY_LEFT);
+		dc.drawText(dc.getWidth() - 60, 10, Gfx.FONT_MEDIUM, Functions.msToTime(elapsedTime), Gfx.TEXT_JUSTIFY_RIGHT);
 	}
 	
 	function drawDataFields(dc) {
@@ -197,7 +197,7 @@ class RecordingView extends Ui.View {
 		
 		// Discipline Time
 		var elapsedTime = Sys.getTimer() - TriData.disciplines[TriData.currentDiscipline].startTime;
-		y = drawDataField( dc, "Discipline:", Functions.msToTime(elapsedTime), y );
+		y = drawDataField( dc, "Temps :", Functions.msToTime(elapsedTime), y );
 		
 		if( TriData.currentDiscipline == 1 || TriData.currentDiscipline == 3 ) {
 			y = drawDataField( dc, null, "Transistion", y );
@@ -330,7 +330,7 @@ class LapView extends Ui.View {
 		dc.setColor(Gfx.COLOR_WHITE, Gfx.COLOR_TRANSPARENT);
 		dc.drawText(dc.getWidth()/2, dc.getFontHeight(Gfx.FONT_LARGE), Gfx.FONT_LARGE, "Lap " + LapCounter, Gfx.TEXT_JUSTIFY_CENTER);
 		dc.drawText(dc.getWidth()/2, dc.getHeight()/2 - dc.getFontHeight(Gfx.FONT_NUMBER_MEDIUM)/2, Gfx.FONT_NUMBER_HOT, Functions.msToTimeWithDecimals(LapTime.toLong()), Gfx.TEXT_JUSTIFY_CENTER);
-		if (counter < 50){
+		if (counter < 5){
 			counter = counter + 1;
 		}
 		else{
