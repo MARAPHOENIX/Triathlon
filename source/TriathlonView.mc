@@ -152,7 +152,7 @@ class TriathlonView extends Ui.View {
 		else{
 			string_autolap = "Run AutoLap: Off";
 		}
-		dc.drawText(dc.getWidth() / 2 - 20, 105, Gfx.FONT_SMALL, string_autolap,Gfx.TEXT_JUSTIFY_LEFT); 
+		dc.drawText(dc.getWidth() / 2 - 20, 125, Gfx.FONT_XTINY, string_autolap,Gfx.TEXT_JUSTIFY_LEFT); 
 		
 		if(settings.paceUnits == Sys.UNIT_METRIC){
 			string_distance = Lang.format("Lap Dist. = $1$ km", [App.getApp().getProperty( "AutolapDistance" ).format("%.02f")]);
@@ -160,7 +160,7 @@ class TriathlonView extends Ui.View {
 		else{
 			string_distance = Lang.format("Lap Dist. = $1$ mi", [App.getApp().getProperty( "AutolapDistance" ).format("%.02f")]);
 		}
-		dc.drawText(dc.getWidth() / 2 - 20, 120, Gfx.FONT_SMALL, string_distance,Gfx.TEXT_JUSTIFY_LEFT);
+		dc.drawText(dc.getWidth() / 2 - 35, 145, Gfx.FONT_SMALL, string_distance,Gfx.TEXT_JUSTIFY_LEFT);
 		
 		if(App.getApp().getProperty( "TwoTimesPressLap" ) == true){
 			string_changeMode = "Change Disc. Mode: 2";
@@ -168,7 +168,7 @@ class TriathlonView extends Ui.View {
 		else{
 			string_changeMode = "Change Disc. Mode: 1";
 		}
-		dc.drawText(dc.getWidth() / 2, 0, Gfx.FONT_XTINY, string_changeMode,Gfx.TEXT_JUSTIFY_CENTER);
+		dc.drawText(dc.getWidth() / 2, 37, Gfx.FONT_XTINY, string_changeMode,Gfx.TEXT_JUSTIFY_CENTER);
 		
 		var segwidth = (dc.getWidth() - 8) / 4;
 		var xfwidth = segwidth / 2;
@@ -196,8 +196,8 @@ class TriathlonView extends Ui.View {
 
 		
 		dc.setColor(Gfx.COLOR_WHITE, Gfx.COLOR_BLACK);
-		dc.drawText(dc.getWidth() - 25, 17, Gfx.FONT_MEDIUM, "START >", Gfx.TEXT_JUSTIFY_RIGHT);
-		dc.drawText(8, 102, Gfx.FONT_MEDIUM, "< MENU", Gfx.TEXT_JUSTIFY_LEFT);
+		dc.drawText(dc.getWidth() - 45, 10, Gfx.FONT_MEDIUM, "START >", Gfx.TEXT_JUSTIFY_RIGHT);
+		dc.drawText(8, 120, Gfx.FONT_MEDIUM, "< MENU", Gfx.TEXT_JUSTIFY_LEFT);
 		
 		if( !gpsIsOkay ) {
 			// Draw "Wait for GPS"
